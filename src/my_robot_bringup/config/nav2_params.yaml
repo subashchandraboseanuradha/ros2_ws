@@ -107,7 +107,7 @@ bt_navigator_navigate_to_pose_rclcpp_node:
 controller_server:
   ros__parameters:
     use_sim_time: True
-    controller_frequency: 20.0
+    controller_frequency: 25.0
     min_x_velocity_threshold: 0.001
     min_y_velocity_threshold: 0.5
     min_theta_velocity_threshold: 0.001
@@ -134,13 +134,13 @@ controller_server:
       min_vel_y: 0.0
       max_vel_x: 0.5  # UPDATED: Increased for 0.6m robot
       max_vel_y: 0.0
-      max_vel_theta: 1.5 # UPDATED: Faster rotation
+      max_vel_theta: 0.5
       min_speed_xy: 0.0
       max_speed_xy: 0.5 # UPDATED
       min_speed_theta: 0.0
-      acc_lim_x: 2.5
+      acc_lim_x: 1.0
       acc_lim_y: 0.0
-      acc_lim_theta: 3.2
+      acc_lim_theta: 1.0
       decel_lim_x: -2.5
       decel_lim_y: 0.0
       decel_lim_theta: -3.2
@@ -331,10 +331,10 @@ velocity_smoother:
     smoothing_frequency: 20.0
     scale_velocities: False
     feedback: "OPEN_LOOP"
-    max_velocity: [0.5, 0.0, 1.5]  # UPDATED
-    min_velocity: [-0.5, 0.0, -1.5] # UPDATED
-    max_accel: [2.5, 0.0, 3.2]
-    max_decel: [-2.5, 0.0, -3.2]
+    max_velocity: [0.5, 0.0, 1.0]  # UPDATED
+    min_velocity: [-0.5, 0.0, -1.0] # UPDATED
+    max_accel: [1.0, 0.0, 1.0]  # Lower this to match DWB limits
+    max_decel: [-1.0, 0.0, -1.0]
     odom_topic: "/odom_filtered" # UPDATED: Use filtered odometry
     odom_duration: 0.1
     deadband_velocity: [0.0, 0.0, 0.0]

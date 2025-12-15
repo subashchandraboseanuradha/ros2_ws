@@ -51,7 +51,7 @@
         </geometry>
         <origin xyz="0 0 ${base_height/2}" rpy="0 0 0"/>
     </collision>
-    <xacro:box_inertial m="5.0" l="${2*base_length}" w="${2*base_width}" h="${2*base_height}" 
+    <xacro:box_inertial m="5.0" l="${base_length}" w="${base_width}" h="${base_height}" 
                         xyz="0 0 ${base_height/2}" rpy="0 0 0"/>
   </link> 
 
@@ -92,7 +92,7 @@
         </geometry>
         <origin xyz="0 0 0" rpy="0 0 0"/>
       </collision>
-      <xacro:sphere_inertial m="0.5" r="${2*0.05}" xyz="0 0 0" rpy="0 0 0"/>
+      <xacro:sphere_inertial m="0.5" r="0.05" xyz="0 0 0" rpy="0 0 0"/>
     </link>
     
   <joint name="caster_wheel_joint" type="fixed">
